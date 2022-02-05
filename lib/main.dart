@@ -115,10 +115,10 @@ class _MyAppState extends State<MyApp> {
       setState(() {
         _locationSubscription = null;
       });
-    }).listen((loc.LocationData currentlocation) async {
+    }).listen((loc.LocationData currentLocation) async {
       await FirebaseFirestore.instance.collection('location').doc('user1').set({
-        'latitude': currentlocation.latitude,
-        'longitude': currentlocation.longitude,
+        'latitude': currentLocation.latitude,
+        'longitude': currentLocation.longitude,
         'name': 'john'
       }, SetOptions(merge: true));
     });
